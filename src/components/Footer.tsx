@@ -12,12 +12,12 @@ const quickLinks = [
 ];
 
 const services = [
-  "Cuci Kiloan",
-  "Cuci Setrika",
-  "Express 6 Jam",
-  "Dry Clean",
-  "Cuci Sepatu",
-  "Cuci Karpet",
+  { name: "Cuci Kiloan", href: "/layanan#cuci-kiloan" },
+  { name: "Cuci Setrika", href: "/layanan#cuci-setrika" },
+  { name: "Express 6 Jam", href: "/layanan#express-6-jam" },
+  { name: "Dry Clean", href: "/layanan#dry-clean" },
+  { name: "Cuci Sepatu", href: "/layanan#cuci-sepatu" },
+  { name: "Cuci Karpet", href: "/layanan#cuci-karpet" },
 ];
 
 export default function Footer() {
@@ -81,8 +81,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Layanan</h3>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service} className="text-gray-400">
-                  {service}
+                <li key={service.name}>
+                  <Link
+                    href={service.href}
+                    className="text-gray-400 hover:text-[#0EA5E9] transition-colors"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
